@@ -4,7 +4,9 @@
  *      C = (F - 32) * 5/9
  */
 export function fahrenheitToCelius(temperature: number): number {
-    return 0;
+    let C: number;
+    C = ((temperature - 32) * 5) / 9;
+    return C;
 }
 
 /**
@@ -12,7 +14,25 @@ export function fahrenheitToCelius(temperature: number): number {
  * if the number is greater than zero.
  */
 export function add3(first: number, second: number, third: number): number {
-    return 0;
+    let sum: number = 0;
+    if (first > 0 && second > 0 && third > 0) {
+        sum = first + second + third;
+        return sum;
+    } else if (first > 0 && second < 0 && third > 0) {
+        sum = first + third;
+        return sum;
+    } else if (first > 0 && second > 0 && third < 0) {
+        sum = first + second;
+        return sum;
+    } else if (first < 0 && second > 0 && third > 0) {
+        sum = second + third;
+        return sum;
+    } else if (first < 0 && second < 0 && third > 0) {
+        sum = third;
+        return sum;
+    } else {
+        return sum;
+    }
 }
 
 /**
@@ -20,7 +40,9 @@ export function add3(first: number, second: number, third: number): number {
  * mark added to the end.
  */
 export function shout(message: string): string {
-    return "";
+    let upper: string = "";
+    upper = message.toUpperCase() + "!";
+    return upper;
 }
 
 /**
@@ -28,7 +50,14 @@ export function shout(message: string): string {
  * mark. Do not use an `if` statement in solving this question.
  */
 export function isQuestion(message: string): boolean {
-    return true;
+    return message.endsWith("?");
+    // for (let i = 0; i < message.length; i++) {
+    //     let lastChar = message[message.length - 1];
+    //     if (lastChar === "?") {
+    //         return true;
+    //     }
+    // }
+    // return false;
 }
 
 /**
@@ -37,5 +66,18 @@ export function isQuestion(message: string): boolean {
  * upper or lower case), then return `false`. Otherwise, return `null`.
  */
 export function convertYesNo(word: string): boolean | null {
-    return true;
+    if (word === "yes" || word === "YES") {
+        return true;
+    } else if (word === "no" || word === "NO") {
+        return false;
+    } else {
+        return null;
+    }
+}
+export function elif(arg0: boolean) {
+    if (arg0) {
+        throw new Error("Function not implemented.");
+    } else {
+        console.log("Funcion excuted Successfully");
+    }
 }
